@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <ImageButton
+            android:id="@+id/btnRecherche"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:theme="@style/Bouton"
+            android:src="@android:drawable/ic_menu_search"
+            android:contentDescription="Recherche"/>
+
+        <ImageButton
+            android:id="@+id/btnNotifications"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:theme="@style/Bouton"
+            android:src="@android:drawable/ic_dialog_email"
+            android:contentDescription="Notifications"/>
+
+        <ImageButton
+            android:id="@+id/btnCreerPost"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:theme="@style/Bouton"
+            android:src="@android:drawable/ic_input_add"
+            android:contentDescription="Créer un post"/>
+
+        <ImageButton
+            android:id="@+id/btnParametres"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:theme="@style/Bouton"
+            android:src="@android:drawable/ic_menu_manage"
+            android:contentDescription="Paramètres"/>
+
+        <ImageView
+            android:id="@+id/ivProfil"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/ic_launcher_foreground"
+            android:contentDescription="Profil"/>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewPosts"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

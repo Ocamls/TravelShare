@@ -1,0 +1,98 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/btn_cancel_report"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/couleur_projet"
+            android:padding="12dp"
+            android:text="Annuler le signalement"
+            android:textColor="#FFFFFF"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Voulez-vous donner votre nom pour le signalement ?"
+            android:textStyle="bold"
+            android:textSize="16sp"/>
+
+        <EditText
+            android:id="@+id/et_pseudo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Pseudo (laisser vide pour anonymat)"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(Laisser vide si vous souhaitez rester anonyme)"
+            android:textSize="12sp"
+            android:alpha="0.6"
+            android:paddingBottom="12dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Saisir la raison de votre signalement pour mieux comprendre"
+            android:textStyle="bold"
+            android:textSize="16sp"/>
+
+        <EditText
+            android:id="@+id/et_recherche_raison"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Rechercher une raison"
+            android:drawableStart="@android:drawable/ic_menu_search"/>
+
+        <ListView
+            android:id="@+id/list_raisons"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:choiceMode="multipleChoice"
+            android:dividerHeight="1dp"/>
+
+        <EditText
+            android:id="@+id/et_raison_utilisateur"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Autre raison (optionnel)"
+            android:layout_marginTop="8dp"
+            android:minLines="3"
+            android:gravity="top"
+            android:inputType="textMultiLine"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Niveau de gravité"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"/>
+
+        <Spinner
+            android:id="@+id/echelle_gravite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- Bouton valider -->
+        <Button
+            android:id="@+id/btn_valider_report"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/couleur_projet"
+            android:padding="12dp"
+            android:text="Valider le signalement"
+            android:textColor="#FFFFFF"/>
+
+    </LinearLayout>
+</ScrollView>

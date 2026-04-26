@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEEEEE">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/btnRetour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RETOUR"
+            android:textAllCaps="true"
+            android:theme="@style/Bouton"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="UTILISATEUR ANONYME"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/texte_compte_anonyme"
+            android:textSize="14sp"
+            android:layout_marginTop="20dp"/>
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/logo_travel_share"
+            android:contentDescription="Logo TravelShare"/>
+
+        <Button
+            android:id="@+id/btnConvertir"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Convertir mon compte"
+            android:layout_marginTop="30dp"
+            android:theme="@style/Bouton"/>
+
+        <Button
+            android:id="@+id/btnCreerCompte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Créer un compte (On recommence à 0)"
+            android:layout_marginTop="12dp"
+            android:theme="@style/Bouton"/>
+
+        <Button
+            android:id="@+id/btnAccueil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Revenir à l'écran d'accueil"
+            android:layout_marginTop="12dp"
+            android:theme="@style/Bouton"/>
+
+    </LinearLayout>
+</ScrollView>

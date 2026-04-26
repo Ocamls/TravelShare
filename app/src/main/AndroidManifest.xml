@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.travelshare">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="TravelShare"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TravelShare">
+
+        <!-- Écran de démarrage -->
+        <activity
+            android:name=".ConnexionActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".CreationCompteActivity"    android:exported="false"/>
+        <activity android:name=".FeedActivity"              android:exported="false"/>
+        <activity android:name=".CreationPostActivity"      android:exported="false"/>
+        <activity android:name=".SignalementActivity"        android:exported="false"/>
+        <activity android:name=".ParametresActivity"        android:exported="false"/>
+        <activity android:name=".ParametresAnonymeActivity" android:exported="false"/>
+        <activity android:name=".ActiviteUtilisateurActivity" android:exported="false"/>
+        <activity android:name=".RechercheActivity"         android:exported="false"/>
+
+    </application>
+
+</manifest>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="40dp"
+    android:paddingBottom="40dp"
+    android:background="@color/background">
+
+    <TextView
+        android:id="@+id/titleConnexion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:text="@string/titleCreateAccount"
+        android:textColor="@color/black"
+        android:textSize="30sp"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/titleConnexion"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/logo_travel_share" />
+
+    <!-- Identifiant -->
+    <EditText
+        android:id="@+id/txtIdentifiant"
+        android:layout_width="207dp"
+        android:layout_height="48dp"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/imageView"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/border_fields"
+        android:hint="@string/txtIdentifiant"
+        android:inputType="text"
+        android:textColorHint="@color/grey"
+        android:textSize="20sp"
+        android:paddingStart="10dp"/>
+
+    <!-- Nom -->
+    <EditText
+        android:id="@+id/txtNom"
+        android:layout_width="207dp"
+        android:layout_height="48dp"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/txtIdentifiant"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/border_fields"
+        android:hint="Nom"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/grey"
+        android:textSize="20sp"
+        android:paddingStart="10dp"/>
+
+    <!-- Prénom -->
+    <EditText
+        android:id="@+id/txtPrenom"
+        android:layout_width="207dp"
+        android:layout_height="48dp"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/txtNom"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/border_fields"
+        android:hint="Prénom"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/grey"
+        android:textSize="20sp"
+        android:paddingStart="10dp"/>
+
+    <!-- Mot de passe -->
+    <EditText
+        android:id="@+id/txtMdp"
+        android:layout_width="207dp"
+        android:layout_height="48dp"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/txtPrenom"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/border_fields"
+        android:hint="@string/txtMDP"
+        android:inputType="textPassword"
+        android:textColorHint="@color/grey"
+        android:textSize="20sp"
+        android:paddingStart="10dp"/>
+
+    <!-- Confirmation mot de passe -->
+    <EditText
+        android:id="@+id/txtConfirmMdp"
+        android:layout_width="207dp"
+        android:layout_height="48dp"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/txtMdp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/border_fields"
+        android:hint="Confirmer le mot de passe"
+        android:inputType="textPassword"
+        android:textColorHint="@color/grey"
+        android:textSize="20sp"
+        android:paddingStart="10dp"/>
+
+    <!-- Déjà un compte -->
+    <TextView
+        android:id="@+id/btnAlreadyAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/txtConfirmMdp"
+        android:layout_marginTop="10dp"
+        android:text="@string/txtAlreadyAccount"
+        android:textSize="15sp"/>
+
+    <!-- Bouton -->
+    <Button
+        android:id="@+id/btnConnexion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"
+        android:theme="@style/Bouton"
+        android:text="@string/btnCreateCompte"/>
+
+</RelativeLayout>

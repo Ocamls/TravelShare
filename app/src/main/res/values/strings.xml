@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">TravelShare</string>
+    <string name="action_settings">Settings</string>
+    <string name="next">Suivant</string>
+    <string name="previous">Précédent</string>
+    <string name="titleConnexion">Connexion</string>
+    <string name="listProducts">listProducts</string>
+    <string name="listShops">listShops</string>
+    <string name="listeDesMagasins">Liste des magasins</string>
+    <string name="listeDesProduits">Liste des produits</string>
+    <string name="maListeDeCourses">Ma liste de courses</string>
+    <string name="txtIdentifiant">Identifiant</string>
+    <string name="txtMDP">Mot de passe</string>
+    <string name="txtConnexion">Connexion</string>
+    <string name="txtCreerCompte">Vous n\'avez pas de compte ? Cliquez ici</string>
+    <string name="btnCreateCompte">Créer un compte</string>
+    <string name="txtAlreadyAccount">Vous avez déjà un compte? Cliquez ici</string>
+    <string name="titleCreateAccount">Création d\'un compte</string>
+    <string name="decocherLesProduitsObsoletes">(Décocher les produits obsolètes)</string>
+    <string name="tout_selectionner">Tout Selectionner</string>
+    <string name="tout_deselectionner">Tout Deselectionner</string>
+    <string name="rechercher_un_produit">Rechercher un produit</string>
+    <string name="ancienneLocalisation">Ancienne localisation du produit :</string>
+    <string name="texteAlerte">Le produit n\'est pas dans le bon rayon, voici la page de modification</string>
+    <string name="Selec_new_rayon">Sélectionnez le nouveau rayon :</string>
+    <string name="envoyer">Envoyer</string>
+    <string name="prepBtn">Commencer</string>
+    <string name="logoappli">logoAppli</string>
+    <string name="finirLesCourses">Finir les courses</string>
+    <string name="boutonPrecedent">Précédent</string>
+    <string name="boutonSuivant">Suivant</string>
+    <string name="boutonOuvrirApplication">Ouvrir l\'application</string>
+    <string name="iconePrécédent">Icone précédent</string>
+    <string name="nomDuRayon">Nom du Rayon</string>
+    <string name="sansLoc">Sans Loc</string>
+    <string name="boulangerie">Boulangerie</string>
+    <string name="produit">Produit</string>
+    <string name="checkMark">✔</string>
+    <string name="crossMark">✘</string>
+    <string name="article">Article</string>
+    <string name="txtContinuerAnonyme">Vous voulez continuer en anonyme ? Cliquez ici !</string>
+    <string name="point_interrogation">\?</string>
+    <string name="texte_compte_anonyme">Vos informations personnelles ne sont enregistrées que localement. Si vous perdez l’accès à ce téléphone, vous perdez les données de votre compte anonyme. Pour obtenir une sauvegarde à distance de vos données, vous devez avoir un compte. Vous pouvez convertir votre compte anonyme et ainsi garder une trace de vos anciennes découvertes sur TravelShare. Ou vous pouvez recommencer l’aventure à 0 et créer un compte à partir de 0."</string>
+
+
+
+
+
+</resources>
