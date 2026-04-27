@@ -76,7 +76,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
             });
 
         } else {
-            // Mode anonyme : like et signalement désactivés visuellement
             holder.likeContainer.setAlpha(0.4f);
             holder.likeContainer.setOnClickListener(v ->
                     Toast.makeText(context,

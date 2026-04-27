@@ -33,7 +33,6 @@ public class SignalementActivity extends AppCompatActivity {
         etRechercheRaison   = findViewById(R.id.et_recherche_raison);
         etRaisonUtilisateur = findViewById(R.id.et_raison_utilisateur);
 
-        // Raisons prédéfinies
         List<String> raisons = Arrays.asList(
                 "Contenu inapproprié",
                 "Harcèlement",
@@ -46,17 +45,14 @@ public class SignalementActivity extends AppCompatActivity {
                 android.R.layout.simple_list_item_multiple_choice, raisons);
         listRaisons.setAdapter(raisonsAdapter);
 
-        // Niveaux de gravité
         List<String> gravites = Arrays.asList("Faible", "Modéré", "Grave", "Très grave");
         ArrayAdapter<String> graviteAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_item, gravites);
         graviteAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         echelleGravite.setAdapter(graviteAdapter);
 
-        // Annuler → retour simple
         btnAnnuler.setOnClickListener(v -> finish());
 
-        // Valider → Toast + retour au feed
         btnValider.setOnClickListener(v -> {
             Toast.makeText(this,
                     "Votre signalement a bien été pris en compte par nos équipes",

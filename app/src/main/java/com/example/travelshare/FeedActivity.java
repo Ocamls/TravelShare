@@ -2,7 +2,6 @@ package com.example.travelshare;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -27,7 +26,6 @@ public class FeedActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed);
 
-        // Récupère le mode utilisateur
         isConnected = getIntent().getBooleanExtra("isConnected", false);
 
         recyclerViewPosts = findViewById(R.id.recyclerViewPosts);
@@ -58,7 +56,6 @@ public class FeedActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        // Boutons réservés aux connectés
         btnCreerPost.setOnClickListener(v -> {
             if (isConnected) {
                 startActivity(new Intent(this, CreationPostActivity.class));
@@ -80,7 +77,6 @@ public class FeedActivity extends AppCompatActivity {
             }
         });
 
-        // Grise visuellement les boutons interdits pour l'anonyme
         if (!isConnected) {
             btnCreerPost.setAlpha(0.4f);
             btnNotifications.setAlpha(0.4f);

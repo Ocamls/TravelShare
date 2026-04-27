@@ -29,7 +29,6 @@ public class ConnexionActivity extends AppCompatActivity {
         createAccountBtn = findViewById(R.id.btnPasDeCompte);
         boutonAnonyme    = findViewById(R.id.btnContinuerAnonyme);
 
-        // Connexion → mode connecté
         btnConnexion.setOnClickListener(v -> {
             String username = nomUtilisateur.getText().toString();
             String password = zoneMotDePasse.getText().toString();
@@ -43,12 +42,10 @@ public class ConnexionActivity extends AppCompatActivity {
             }
         });
 
-        // Créer un compte → mode connecté après inscription
         createAccountBtn.setOnClickListener(v -> {
             startActivity(new Intent(this, CreationCompteActivity.class));
         });
 
-        // Continuer anonyme → mode anonyme
         boutonAnonyme.setOnClickListener(v -> {
             Intent intent = new Intent(this, FeedActivity.class);
             intent.putExtra("isConnected", false);

@@ -38,7 +38,6 @@ public class CreationCompteActivity extends AppCompatActivity {
 
             Log.d("CREATE_ACCOUNT", "Username: " + username);
 
-            // Après inscription → mode connecté
             Intent intent = new Intent(this, FeedActivity.class);
             intent.putExtra("isConnected", true);
             startActivity(intent);
