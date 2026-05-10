@@ -16,16 +16,15 @@
         android:textSize="30sp"
         android:textAlignment="center"/>
 
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_below="@id/titleConnexion"
         android:layout_centerInParent="true"
-        android:layout_marginTop="130dp"
-        android:src="@drawable/logo_travel_share"/>
-
-
+        android:layout_marginTop="69dp"
+        android:src="@drawable/logo_travel_share" />
 
     <EditText
         android:id="@+id/txtIdentifiant"

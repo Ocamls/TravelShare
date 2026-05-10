@@ -21,10 +21,13 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
     private Context context;
     private boolean isConnected;
 
+    private final LikeStorage likeStorage;
+
     public PostAdapter(Context context, List<Post> posts, boolean isConnected) {
         this.context     = context;
         this.posts       = posts;
         this.isConnected = isConnected;
+        this.likeStorage = new LikeStorage(context); // ajout
     }
 
     @NonNull
@@ -43,15 +46,30 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         holder.tvDescription.setText(post.getDescription());
         holder.tvTags.setText(post.getTags());
         holder.tvLikes.setText(String.valueOf(post.getLikes()));
-        holder.ivPost.setImageResource(post.getImageResId());
+        if (post.getPhotoUri() != null && !post.getPhotoUri().isEmpty()) {
+            holder.ivPost.setImageURI(android.net.Uri.parse(post.getPhotoUri()));
+        } else {
+            holder.ivPost.setImageResource(post.getImageResId());
+        }
 
-        // Icône like selon état
-        holder.ivLike.setImageResource(post.isLiked()
+        String postId = String.valueOf(position); // identifiant du post
+
+        holder.ivLike.setImageResource(likeStorage.aLike(postId)
                 ? android.R.drawable.btn_star_big_on
                 : android.R.drawable.btn_star_big_off);
 
+        holder.likeContainer.setOnClickListener(v -> {
+            boolean liked = likeStorage.toggleLike(postId);
+            post.toggleLike(); // met à jour le compteur dans Post
+            holder.tvLikes.setText(String.valueOf(post.getLikes()));
+            holder.ivLike.setImageResource(liked
+                    ? android.R.drawable.btn_star_big_on
+                    : android.R.drawable.btn_star_big_off);
+            // Persiste le nouveau compteur
+            new PostStorage(context).mettreAJourLikes(postId, post.getLikes());
+        });
+
         if (isConnected) {
-            // Like actif
             holder.likeContainer.setAlpha(1f);
             holder.likeContainer.setOnClickListener(v -> {
                 post.toggleLike();
@@ -61,7 +79,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
                         : android.R.drawable.btn_star_big_off);
             });
 
-            // Signalement actif
             holder.btnReport.setAlpha(1f);
             holder.btnReport.setOnClickListener(v -> {
                 Intent intent = new Intent(context, SignalementActivity.class);

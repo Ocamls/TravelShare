@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ParametresActivity extends AppCompatActivity {
 
+    private String username;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,10 +18,14 @@ public class ParametresActivity extends AppCompatActivity {
         Button btnInfosPerso = findViewById(R.id.btnInfosPerso);
         Button btnDeconnexion = findViewById(R.id.btnDeconnexion);
 
+        username = getIntent().getStringExtra("username");
+
+
         btnRetour.setOnClickListener(v -> finish());
 
         btnInfosPerso.setOnClickListener(v -> {
             Intent intent = new Intent(this, ActiviteUtilisateurActivity.class);
+            intent.putExtra("auteur", username);
             startActivity(intent);
         });
 

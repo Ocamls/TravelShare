@@ -47,11 +47,12 @@
             android:src="@android:drawable/ic_menu_manage"
             android:contentDescription="Paramètres"/>
 
-        <ImageView
-            android:id="@+id/ivProfil"
+        <ImageButton
+            android:id="@+id/btnProfil"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:theme="@style/Bouton"
             android:src="@drawable/ic_launcher_foreground"
             android:contentDescription="Profil"/>
 

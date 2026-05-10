@@ -37,21 +37,23 @@
         android:layout_marginBottom="8dp"/>
 
     <!-- Photo de profil placeholder -->
+
+    <!-- Stats -->
+
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_gravity="center"
-        android:src="@drawable/logo_travel_share"
         android:layout_marginTop="8dp"
-        android:contentDescription="Photo de profil"/>
+        android:contentDescription="Photo de profil"
+        android:src="@drawable/logo_travel_share" />
 
-    <!-- Stats -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="16dp"
-        android:weightSum="3">
+        android:weightSum="2">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -60,6 +62,7 @@
             android:orientation="vertical"
             android:gravity="center">
             <TextView
+                android:id="@+id/tvPublications"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="12"
@@ -76,39 +79,24 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="vertical">
+
             <TextView
+                android:id="@+id/tvLikes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="348"
                 android:textSize="18sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Likes reçus"
-                android:textSize="12sp"/>
+                android:textSize="12sp" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="7"
-                android:textSize="18sp"
-                android:textStyle="bold"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Pays visités"
-                android:textSize="12sp"/>
-        </LinearLayout>
 
     </LinearLayout>
 

@@ -21,6 +21,7 @@ public class CreationCompteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_creation_compte);
 
+        UtilisateurStorage utilisateurStorage = new UtilisateurStorage(this);
         usernameZone        = findViewById(R.id.txtIdentifiant);
         nomZone             = findViewById(R.id.txtNom);
         prenomZone          = findViewById(R.id.txtPrenom);
@@ -36,17 +37,25 @@ public class CreationCompteActivity extends AppCompatActivity {
             String password       = passwordZone.getText().toString();
             String confirmPassword = confirmPasswordZone.getText().toString();
 
-            Log.d("CREATE_ACCOUNT", "Username: " + username);
+            if (username.isEmpty() || nom.isEmpty() || prenom.isEmpty() || password.isEmpty() || confirmPassword.isEmpty() || !password.equals(confirmPassword) ){
+                Toast.makeText(this, "Veuillez remplir tous les champs", Toast.LENGTH_SHORT).show();
+                return;
+            }
 
+            Utilisateur nouvelUtilisateur = new Utilisateur(username, password, nom, prenom);
+            utilisateurStorage.ajouterUtilisateur(nouvelUtilisateur);
             Intent intent = new Intent(this, FeedActivity.class);
             intent.putExtra("isConnected", true);
+            intent.putExtra("username", username);
             startActivity(intent);
             Toast.makeText(this, "Compte créé, bienvenue !", Toast.LENGTH_SHORT).show();
+            finish();
         });
 
         connectBtn.setOnClickListener(v -> {
             startActivity(new Intent(this, ConnexionActivity.class));
             Toast.makeText(this, "J'ai déjà un compte", Toast.LENGTH_SHORT).show();
+            finish();
         });
     }
 }
