@@ -133,4 +133,11 @@ public class FeedActivity extends AppCompatActivity {
             btnNotifications.setAlpha(0.4f);
         }
     }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        posts.clear();
+        posts.addAll(new PostStorage(this).getTousPosts());
+        adapter.notifyDataSetChanged();
+    }
 }
