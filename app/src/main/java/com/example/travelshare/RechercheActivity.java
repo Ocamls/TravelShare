@@ -51,9 +51,13 @@ public class RechercheActivity extends AppCompatActivity {
 
             String tagSelectionne = resultats.get(position);
 
-            Intent intent = new Intent(RechercheActivity.this,FeedActivity.class);
+            Intent intent = new Intent(this, FeedActivity.class);
 
-            intent.putExtra("tag_recherche", tagSelectionne);
+            intent.putExtra("tag", tagSelectionne);
+
+            intent.putExtra("isConnected",getIntent().getBooleanExtra("isConnected", false));
+
+            intent.putExtra("username",getIntent().getStringExtra("username"));
 
             startActivity(intent);
         });

@@ -81,9 +81,17 @@ public class FeedActivity extends AppCompatActivity {
         recyclerViewPosts.setLayoutManager(new LinearLayoutManager(this));
         recyclerViewPosts.setAdapter(adapter);
 
-        btnRecherche.setOnClickListener(v ->
-                startActivity(new Intent(this, RechercheActivity.class)));
+        btnRecherche.setOnClickListener(v -> {
 
+            Intent intent = new Intent(this, RechercheActivity.class);
+
+            intent.putExtra("isConnected", isConnected);
+
+            intent.putExtra("username", username);
+
+            startActivity(intent);
+
+        });
         btnProfil.setOnClickListener(v -> {
             if (isConnected) {
                 Intent intent = new Intent(this, ActiviteUtilisateurActivity.class);
