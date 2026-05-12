@@ -18,7 +18,7 @@
             android:layout_weight="1"
             android:theme="@style/Bouton"
             android:src="@android:drawable/ic_menu_search"
-            android:contentDescription="Recherche"/>
+            android:contentDescription="@string/cd_recherche"/>
 
         <ImageButton
             android:id="@+id/btnNotifications"
@@ -27,7 +27,7 @@
             android:layout_weight="1"
             android:theme="@style/Bouton"
             android:src="@android:drawable/ic_dialog_email"
-            android:contentDescription="Notifications"/>
+            android:contentDescription="@string/cd_notifications"/>
 
         <ImageButton
             android:id="@+id/btnCreerPost"
@@ -36,7 +36,7 @@
             android:layout_weight="1"
             android:theme="@style/Bouton"
             android:src="@android:drawable/ic_input_add"
-            android:contentDescription="Créer un post"/>
+            android:contentDescription="@string/cd_creer_post"/>
 
         <ImageButton
             android:id="@+id/btnParametres"
@@ -45,7 +45,7 @@
             android:layout_weight="1"
             android:theme="@style/Bouton"
             android:src="@android:drawable/ic_menu_manage"
-            android:contentDescription="Paramètres"/>
+            android:contentDescription="@string/cd_parametres"/>
 
         <ImageButton
             android:id="@+id/btnProfil"
@@ -54,7 +54,7 @@
             android:layout_weight="1"
             android:theme="@style/Bouton"
             android:src="@drawable/ic_launcher_foreground"
-            android:contentDescription="Profil"/>
+            android:contentDescription="@string/cd_profil"/>
 
     </LinearLayout>
 

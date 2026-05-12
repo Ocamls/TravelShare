@@ -11,14 +11,14 @@
         android:id="@+id/btnRetour"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="RETOUR"
+        android:text="@string/btn_retour"
         android:textAllCaps="true"
         android:theme="@style/Bouton"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Rechercher"
+        android:text="@string/titre_recherche"
         android:textSize="24sp"
         android:textStyle="bold"
         android:textAlignment="center"
@@ -29,7 +29,7 @@
         android:id="@+id/etRecherche"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:hint="Lieu, thème, voyageur..."
+        android:hint="@string/hint_recherche"
         android:inputType="text"
         android:background="@drawable/border_fields"
         android:paddingStart="12dp"
@@ -39,8 +39,16 @@
         android:id="@+id/btnLancerRecherche"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Rechercher"
+        android:text="@string/btn_lancer_recherche"
         android:layout_marginTop="16dp"
         android:theme="@style/Bouton"/>
+
+    <ListView
+        android:id="@+id/listResultats"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="16dp"
+        android:background="#FFFFFF"/>
 
 </LinearLayout>

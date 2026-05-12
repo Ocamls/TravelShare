@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="40dp"
+    android:paddingBottom="40dp"
+    android:background="@color/background">
+
+    <Button
+        android:id="@+id/btnRetour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_retour"
+        android:theme="@style/Bouton" />
+
+    <TextView
+        android:id="@+id/titleInfosPerso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="90dp"
+        android:gravity="center"
+        android:text="@string/titleInfosPerso"
+        android:textColor="@color/black"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/labelIdentifiant"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titleInfosPerso"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="40dp"
+        android:text="@string/label_identifiant"
+        android:textColor="@color/black"
+        android:textSize="18sp"  />
+
+
+    <EditText
+        android:id="@+id/txtIdentifiant"
+        android:layout_width="207dp"
+        android:layout_height="48dp"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/labelIdentifiant"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/border_fields"
+        android:hint="@string/txtIdentifiant"
+        android:inputType="text"
+        android:textColorHint="@color/grey"
+        android:textSize="20sp"
+        android:paddingStart="10dp"/>
+
+    <TextView
+        android:id="@+id/labelNom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtIdentifiant"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="40dp"
+        android:text="@string/hint_votre_nom"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+
+    <EditText
+        android:id="@+id/txtNom"
+        android:layout_width="207dp"
+        android:layout_height="48dp"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/labelNom"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/border_fields"
+        android:hint="@string/hint_votre_nom"
+        android:inputType="text"
+        android:textColorHint="@color/grey"
+        android:textSize="20sp"
+        android:paddingStart="10dp"/>
+
+    <TextView
+        android:id="@+id/labelPrenom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtNom"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="40dp"
+        android:text="@string/hint_votre_prenom"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/txtPrenom"
+        android:layout_width="207dp"
+        android:layout_height="48dp"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/labelPrenom"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/border_fields"
+        android:hint="@string/hint_votre_nom"
+        android:inputType="text"
+        android:textColorHint="@color/grey"
+        android:textSize="20sp"
+        android:paddingStart="10dp"/>
+
+    <Button
+        android:id="@+id/btnChangementInformations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/txtPrenom"
+        android:text="@string/btn_changer_infos"
+        android:theme="@style/Bouton" />
+
+</RelativeLayout>

@@ -15,14 +15,14 @@
             android:id="@+id/btnRetour"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="RETOUR"
+            android:text="@string/btn_retour"
             android:textAllCaps="true"
             android:theme="@style/Bouton"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="UTILISATEUR ANONYME"
+            android:text="@string/titre_anonyme"
             android:textAlignment="center"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -47,7 +47,7 @@
             android:id="@+id/btnConvertir"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Convertir mon compte"
+            android:text="@string/btn_convertir_compte"
             android:layout_marginTop="30dp"
             android:theme="@style/Bouton"/>
 
@@ -55,7 +55,7 @@
             android:id="@+id/btnCreerCompte"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Créer un compte (On recommence à 0)"
+            android:text="@string/btn_creer_compte_zero"
             android:layout_marginTop="12dp"
             android:theme="@style/Bouton"/>
 
@@ -63,7 +63,7 @@
             android:id="@+id/btnAccueil"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Revenir à l'écran d'accueil"
+            android:text="@string/btn_retour_accueil"
             android:layout_marginTop="12dp"
             android:theme="@style/Bouton"/>
 

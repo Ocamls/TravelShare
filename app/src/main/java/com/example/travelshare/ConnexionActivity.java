@@ -26,23 +26,28 @@ public class ConnexionActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_connexion);
 
-        nomUtilisateur        = findViewById(R.id.txtIdentifiant);
-        zoneMotDePasse        = findViewById(R.id.txtMdp);
-        btnConnexion          = findViewById(R.id.btnConnexion);
-        createAccountBtn      = findViewById(R.id.btnPasDeCompte);
-        boutonAnonyme         = findViewById(R.id.btnContinuerAnonyme);
+        nomUtilisateur = findViewById(R.id.txtIdentifiant);
+        zoneMotDePasse = findViewById(R.id.txtMdp);
+        btnConnexion = findViewById(R.id.btnConnexion);
+        createAccountBtn = findViewById(R.id.btnPasDeCompte);
+        boutonAnonyme = findViewById(R.id.btnContinuerAnonyme);
 
         utilisateurStorage = new UtilisateurStorage(this);
 
         SharedPreferences prefs = getSharedPreferences("travelshare_users", Context.MODE_PRIVATE);
-        if (!prefs.getBoolean("init_users_done", false)) {
-            utilisateurStorage.ajouterUtilisateur(new Utilisateur("test",      "test","monNom","nomPrenom"));
-            utilisateurStorage.ajouterUtilisateur(new Utilisateur("big_travel","123","Brico","Thomas"));
-            utilisateurStorage.ajouterUtilisateur(new Utilisateur("alice",     "123","Cola","Alice"));
-            prefs.edit().putBoolean("init_users_done", true).apply();
+
+        prefs.edit().clear().apply();
+
+        utilisateurStorage.ajouterUtilisateur(new Utilisateur("test", "test", "monNom", "nomPrenom"));
+        utilisateurStorage.ajouterUtilisateur(new Utilisateur("big_travel", "123", "Brico", "Thomas"));
+        utilisateurStorage.ajouterUtilisateur(new Utilisateur("alice", "123", "Cola", "Alice"));
+
+        for (Utilisateur u : utilisateurStorage.getTousUtilisateurs()) {
+            android.util.Log.d("USERS", u.nomUtilisateur + " / " + u.motDePasse);
         }
 
         btnConnexion.setOnClickListener(v -> {
@@ -54,21 +59,18 @@ public class ConnexionActivity extends AppCompatActivity {
                 return;
             }
 
-            Utilisateur u = utilisateurStorage.trouverUtilisateur(username, password);
+            Utilisateur u = utilisateurStorage.trouverUtilisateur(username);
             if (u != null) {
-                // Connexion
-                utilisateurStorage.connecter(u.nom);
+                utilisateurStorage.connecter(u.nomUtilisateur);
 
-                // Transfert des likes anonymes vers ce compte
                 List<Post> posts = new PostStorage(this).getTousPosts();
                 List<String> ids = new ArrayList<>();
                 for (int i = 0; i < posts.size(); i++) ids.add(String.valueOf(i));
-                new LikeStorage(this).transfererLikesAnonymes(u.nom, ids);
+                new LikeStorage(this).transfererLikesAnonymes(u.nomUtilisateur, ids);
 
-                // Passage au feed
                 Intent intent = new Intent(this, FeedActivity.class);
                 intent.putExtra("isConnected", true);
-                intent.putExtra("username", u.nom);
+                intent.putExtra("username", u.nomUtilisateur);
                 startActivity(intent);
 
             } else {
@@ -80,7 +82,7 @@ public class ConnexionActivity extends AppCompatActivity {
                 startActivity(new Intent(this, CreationCompteActivity.class)));
 
         boutonAnonyme.setOnClickListener(v -> {
-            utilisateurStorage.deconnecter(); // s'assure qu'aucune session n'est active
+            utilisateurStorage.deconnecter();
             Intent intent = new Intent(this, FeedActivity.class);
             intent.putExtra("isConnected", false);
             startActivity(intent);

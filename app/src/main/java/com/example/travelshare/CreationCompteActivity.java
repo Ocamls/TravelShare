@@ -22,22 +22,22 @@ public class CreationCompteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_creation_compte);
 
         UtilisateurStorage utilisateurStorage = new UtilisateurStorage(this);
-        usernameZone        = findViewById(R.id.txtIdentifiant);
-        nomZone             = findViewById(R.id.txtNom);
-        prenomZone          = findViewById(R.id.txtPrenom);
-        passwordZone        = findViewById(R.id.txtMdp);
+        usernameZone = findViewById(R.id.txtIdentifiant);
+        nomZone = findViewById(R.id.txtNom);
+        prenomZone = findViewById(R.id.txtPrenom);
+        passwordZone = findViewById(R.id.txtMdp);
         confirmPasswordZone = findViewById(R.id.txtConfirmMdp);
-        createAccountBtn    = findViewById(R.id.btnConnexion);
-        connectBtn          = findViewById(R.id.btnAlreadyAccount);
+        createAccountBtn = findViewById(R.id.btnConnexion);
+        connectBtn = findViewById(R.id.btnAlreadyAccount);
 
         createAccountBtn.setOnClickListener(v -> {
-            String username       = usernameZone.getText().toString();
-            String nom            = nomZone.getText().toString();
-            String prenom         = prenomZone.getText().toString();
-            String password       = passwordZone.getText().toString();
+            String username = usernameZone.getText().toString();
+            String nom = nomZone.getText().toString();
+            String prenom = prenomZone.getText().toString();
+            String password = passwordZone.getText().toString();
             String confirmPassword = confirmPasswordZone.getText().toString();
 
-            if (username.isEmpty() || nom.isEmpty() || prenom.isEmpty() || password.isEmpty() || confirmPassword.isEmpty() || !password.equals(confirmPassword) ){
+            if (username.isEmpty() || nom.isEmpty() || prenom.isEmpty() || password.isEmpty() || confirmPassword.isEmpty() || !password.equals(confirmPassword)) {
                 Toast.makeText(this, "Veuillez remplir tous les champs", Toast.LENGTH_SHORT).show();
                 return;
             }

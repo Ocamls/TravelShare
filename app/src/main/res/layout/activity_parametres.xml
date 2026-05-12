@@ -11,14 +11,14 @@
         android:id="@+id/btnRetour"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="RETOUR"
+        android:text="@string/btn_retour"
         android:textAllCaps="true"
         android:theme="@style/Bouton"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Espace paramètres"
+        android:text="@string/titre_parametres"
         android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -28,7 +28,7 @@
         android:id="@+id/btnInfosPerso"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Mes informations personnelles"
+        android:text="@string/btn_infos_perso"
         android:layout_marginTop="30dp"
         android:theme="@style/Bouton"/>
 
@@ -36,7 +36,7 @@
         android:id="@+id/btnNotifications"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Notifications"
+        android:text="@string/btn_notifications"
         android:layout_marginTop="12dp"
         android:theme="@style/Bouton"/>
 
@@ -44,7 +44,7 @@
         android:id="@+id/btnGeneral"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Général"
+        android:text="@string/btn_general"
         android:layout_marginTop="12dp"
         android:theme="@style/Bouton"/>
 
@@ -52,7 +52,7 @@
         android:id="@+id/btnDeconnexion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Se déconnecter"
+        android:text="@string/btn_deconnexion"
         android:layout_marginTop="12dp"
         android:theme="@style/Bouton"/>
 

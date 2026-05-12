@@ -21,7 +21,6 @@ public class UtilisateurStorage {
         this.prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
     }
 
-    // --- Comptes ---
 
     public List<Utilisateur> getTousUtilisateurs() {
         String json = prefs.getString(KEY_USERS, null);
@@ -36,21 +35,25 @@ public class UtilisateurStorage {
         prefs.edit().putString(KEY_USERS, gson.toJson(users)).apply();
     }
 
-    public Utilisateur trouverUtilisateur(String nom, String motDePasse) {
+    public Utilisateur trouverUtilisateur(String nomUtilisateur) {
+        if (nomUtilisateur == null) return null;
         for (Utilisateur u : getTousUtilisateurs()) {
-            if (u.nom.equals(nom) && u.motDePasse.equals(motDePasse)) return u;
+            if (u != null &&
+                    u.nomUtilisateur != null &&
+                    u.nomUtilisateur.equals(nomUtilisateur)) {
+                return u;
+            }
         }
         return null;
     }
 
     public boolean nomExiste(String nom) {
         for (Utilisateur u : getTousUtilisateurs()) {
-            if (u.nom.equals(nom)) return true;
+            if (u.nomUtilisateur.equals(nom)) return true;
         }
         return false;
     }
 
-    // --- Session courante ---
 
     public void connecter(String nom) {
         prefs.edit().putString(KEY_COURANT, nom).apply();
@@ -61,7 +64,7 @@ public class UtilisateurStorage {
     }
 
     public String getUtilisateurCourant() {
-        return prefs.getString(KEY_COURANT, null); // null = anonyme
+        return prefs.getString(KEY_COURANT, null);
     }
 
     public boolean isConnecte() {

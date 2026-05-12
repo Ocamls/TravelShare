@@ -34,6 +34,7 @@
         <activity android:name=".ParametresAnonymeActivity" android:exported="false"/>
         <activity android:name=".ActiviteUtilisateurActivity" android:exported="false"/>
         <activity android:name=".RechercheActivity"         android:exported="false"/>
+        <activity android:name=".InformationsPersonnellesActivity"         android:exported="false"/>
 
         <provider
             android:name="androidx.core.content.FileProvider"

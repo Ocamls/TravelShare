@@ -1,49 +1,85 @@
 <resources>
+
     <string name="app_name">TravelShare</string>
     <string name="action_settings">Settings</string>
     <string name="next">Suivant</string>
     <string name="previous">Précédent</string>
+    <string name="btn_retour">RETOUR</string>
+
     <string name="titleConnexion">Connexion</string>
-    <string name="listProducts">listProducts</string>
-    <string name="listShops">listShops</string>
-    <string name="listeDesMagasins">Liste des magasins</string>
-    <string name="listeDesProduits">Liste des produits</string>
-    <string name="maListeDeCourses">Ma liste de courses</string>
     <string name="txtIdentifiant">Identifiant</string>
     <string name="txtMDP">Mot de passe</string>
     <string name="txtConnexion">Connexion</string>
     <string name="txtCreerCompte">Vous n\'avez pas de compte ? Cliquez ici</string>
-    <string name="btnCreateCompte">Créer un compte</string>
-    <string name="txtAlreadyAccount">Vous avez déjà un compte? Cliquez ici</string>
-    <string name="titleCreateAccount">Création d\'un compte</string>
-    <string name="decocherLesProduitsObsoletes">(Décocher les produits obsolètes)</string>
-    <string name="tout_selectionner">Tout Selectionner</string>
-    <string name="tout_deselectionner">Tout Deselectionner</string>
-    <string name="rechercher_un_produit">Rechercher un produit</string>
-    <string name="ancienneLocalisation">Ancienne localisation du produit :</string>
-    <string name="texteAlerte">Le produit n\'est pas dans le bon rayon, voici la page de modification</string>
-    <string name="Selec_new_rayon">Sélectionnez le nouveau rayon :</string>
-    <string name="envoyer">Envoyer</string>
-    <string name="prepBtn">Commencer</string>
-    <string name="logoappli">logoAppli</string>
-    <string name="finirLesCourses">Finir les courses</string>
-    <string name="boutonPrecedent">Précédent</string>
-    <string name="boutonSuivant">Suivant</string>
-    <string name="boutonOuvrirApplication">Ouvrir l\'application</string>
-    <string name="iconePrécédent">Icone précédent</string>
-    <string name="nomDuRayon">Nom du Rayon</string>
-    <string name="sansLoc">Sans Loc</string>
-    <string name="boulangerie">Boulangerie</string>
-    <string name="produit">Produit</string>
-    <string name="checkMark">✔</string>
-    <string name="crossMark">✘</string>
-    <string name="article">Article</string>
     <string name="txtContinuerAnonyme">Vous voulez continuer en anonyme ? Cliquez ici !</string>
+
+    <string name="titleCreateAccount">Création d\'un compte</string>
+    <string name="txtAlreadyAccount">Vous avez déjà un compte ? Cliquez ici</string>
+    <string name="btnCreateCompte">Créer un compte</string>
+    <string name="hint_nom">Nom</string>
+    <string name="hint_prenom">Prénom</string>
+    <string name="hint_confirm_mdp">Confirmer votre mot de passe</string>
+
+    <string name="titleInfosPerso">Informations personnelles</string>
+    <string name="label_identifiant">Nom d\'utilisateur :</string>
+    <string name="label_nom">Nom :</string>
+    <string name="label_prenom">Votre prénom</string>
+    <string name="hint_votre_nom">Votre nom</string>
+    <string name="hint_votre_prenom">Votre prénom</string>
+    <string name="btn_changer_infos">Changer les informations</string>
+
+    <string name="titre_parametres">Espace paramètres</string>
+    <string name="btn_infos_perso">Mes informations personnelles</string>
+    <string name="btn_notifications">Notifications</string>
+    <string name="btn_general">Général</string>
+    <string name="btn_deconnexion">Se déconnecter</string>
+
+    <string name="titre_anonyme">UTILISATEUR ANONYME</string>
+    <string name="texte_compte_anonyme">Vos informations personnelles ne sont enregistrées que localement. Si vous perdez l\'accès à ce téléphone, vous perdez les données de votre compte anonyme. Pour obtenir une sauvegarde à distance de vos données, vous devez avoir un compte. Vous pouvez convertir votre compte anonyme et ainsi garder une trace de vos anciennes découvertes sur TravelShare. Ou vous pouvez recommencer l\'aventure à 0 et créer un compte à partir de 0.</string>
+    <string name="btn_convertir_compte">Convertir mon compte</string>
+    <string name="btn_creer_compte_zero">Créer un compte (On recommence à 0)</string>
+    <string name="btn_retour_accueil">Revenir à l\'écran d\'accueil</string>
+
+    <string name="cd_recherche">Recherche</string>
+    <string name="cd_notifications">Notifications</string>
+    <string name="cd_creer_post">Créer un post</string>
+    <string name="cd_parametres">Paramètres</string>
+    <string name="cd_profil">Profil</string>
+
+    <string name="btn_galerie">Galerie</string>
+    <string name="btn_appareil_photo">Appareil photo</string>
+    <string name="check_publique">Rendre la photo publique</string>
+    <string name="label_publier_groupes">Publier dans des groupes</string>
+    <string name="label_description_lieu">Description du lieu</string>
+    <string name="hint_description_lieu">Décrire le lieu, adresse, accès...</string>
+    <string name="label_rechercher_tags">Rechercher des tags</string>
+    <string name="hint_rechercher_tags">Ex : Paris, plage, montagne…</string>
+    <string name="label_tags_selectionnes">Tags sélectionnés</string>
+    <string name="label_description_post">Description de la publication</string>
+    <string name="hint_description_post">Ajouter une description...</string>
+    <string name="btn_publier">Publier</string>
+
+    <string name="cd_photo_profil">Photo de profil</string>
+    <string name="label_publications">Publications</string>
+    <string name="label_likes_recus">Likes reçus</string>
+
+    <string name="titre_recherche">Rechercher</string>
+    <string name="hint_recherche">Lieu, thème, voyageur...</string>
+    <string name="btn_lancer_recherche">Rechercher</string>
+
+    <string name="btn_annuler_signalement">Annuler le signalement</string>
+    <string name="btn_valider_signalement">Valider le signalement</string>
+    <string name="label_donner_nom_signalement">Voulez-vous donner votre nom pour le signalement ?</string>
+    <string name="hint_pseudo_signalement">Pseudo (laisser vide pour anonymat)</string>
+    <string name="label_anonymat_info">(Laisser vide si vous souhaitez rester anonyme)</string>
+    <string name="label_raison_signalement">Saisir la raison de votre signalement pour mieux comprendre</string>
+    <string name="hint_rechercher_raison">Rechercher une raison</string>
+    <string name="hint_autre_raison">Autre raison (optionnel)</string>
+    <string name="label_gravite">Niveau de gravité</string>
+
     <string name="point_interrogation">\?</string>
-    <string name="texte_compte_anonyme">Vos informations personnelles ne sont enregistrées que localement. Si vous perdez l’accès à ce téléphone, vous perdez les données de votre compte anonyme. Pour obtenir une sauvegarde à distance de vos données, vous devez avoir un compte. Vous pouvez convertir votre compte anonyme et ainsi garder une trace de vos anciennes découvertes sur TravelShare. Ou vous pouvez recommencer l’aventure à 0 et créer un compte à partir de 0."</string>
+    <string name="cd_photo_post">Photo du post</string>
 
-
-
-
-
+    <string name="auteur">auteur</string>
+    <string name="post_a_supprimer">-</string>
 </resources>

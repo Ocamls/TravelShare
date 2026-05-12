@@ -6,6 +6,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 public class PostStorage {
@@ -24,7 +25,11 @@ public class PostStorage {
         String json = prefs.getString(KEY_POSTS, null);
         if (json == null) return new ArrayList<>();
         Type type = new TypeToken<List<Post>>(){}.getType();
-        return gson.fromJson(json, type);
+        List<Post> posts = gson.fromJson(json, type);
+        for (Post p : posts) {
+            if (p.getLikeurs() == null) p.setLikeurs(new HashSet<>());
+        }
+        return posts;
     }
 
     public void ajouterPost(Post post) {
@@ -44,30 +49,42 @@ public class PostStorage {
     public void effacerTout() {
         prefs.edit().remove(KEY_POSTS).apply();
     }
-    public void mettreAJourLikes(String postId, int nouveauxLikes) {
+
+
+    public boolean toggleLike(int postIndex, String userId) {
         List<Post> posts = getTousPosts();
-        int index = Integer.parseInt(postId);
-        if (index >= 0 && index < posts.size()) {
-            // Gson ne permet pas de modifier directement, on recrée
-            Post p = posts.get(index);
-            // On force la valeur via un champ accessible
-            posts.set(index, p);
-            sauvegarder(posts);
-        }
+        if (postIndex < 0 || postIndex >= posts.size()) return false;
+        boolean liked = posts.get(postIndex).toggleLike(userId);
+        sauvegarder(posts);
+        return liked;
     }
 
     public List<Post> getPostsUtilisateur(String auteur) {
-        List<Post> posts = getTousPosts();
-        List<Post> postsUtilisateur = new ArrayList<>();
-        for (Post post : posts) {
-            if (auteur != null && auteur.equals(post.getAuteur())) {
-                postsUtilisateur.add(post);
-            }
+        List<Post> result = new ArrayList<>();
+        for (Post p : getTousPosts()) {
+            if (auteur != null && auteur.equals(p.getAuteur())) result.add(p);
         }
-        return postsUtilisateur;
+        return result;
     }
 
     private void sauvegarder(List<Post> posts) {
         prefs.edit().putString(KEY_POSTS, gson.toJson(posts)).apply();
     }
+
+    public void supprimer(Post postASupprimer) {
+        if (postASupprimer == null) return;
+        List<Post> posts = getTousPosts();
+        for (int i = 0; i < posts.size(); i++) {
+            Post p = posts.get(i);
+            if (p.getAuteur().equals(postASupprimer.getAuteur())
+                    && p.getDate().equals(postASupprimer.getDate())
+                    && p.getDescription().equals(postASupprimer.getDescription())) {
+                posts.remove(i);
+                break;
+            }
+        }
+        sauvegarder(posts);
+    }
+
+
 }

@@ -15,13 +15,13 @@
             android:layout_marginTop="24dp"
             android:backgroundTint="@color/couleur_projet"
             android:padding="12dp"
-            android:text="Annuler le signalement"
+            android:text="@string/btn_annuler_signalement"
             android:textColor="#FFFFFF"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Voulez-vous donner votre nom pour le signalement ?"
+            android:text="@string/label_donner_nom_signalement"
             android:textStyle="bold"
             android:textSize="16sp"/>
 
@@ -29,12 +29,12 @@
             android:id="@+id/et_pseudo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Pseudo (laisser vide pour anonymat)"/>
+            android:hint="@string/hint_pseudo_signalement"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="(Laisser vide si vous souhaitez rester anonyme)"
+            android:text="@string/label_anonymat_info"
             android:textSize="12sp"
             android:alpha="0.6"
             android:paddingBottom="12dp"/>
@@ -42,7 +42,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Saisir la raison de votre signalement pour mieux comprendre"
+            android:text="@string/label_raison_signalement"
             android:textStyle="bold"
             android:textSize="16sp"/>
 
@@ -50,7 +50,7 @@
             android:id="@+id/et_recherche_raison"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Rechercher une raison"
+            android:hint="@string/hint_rechercher_raison"
             android:drawableStart="@android:drawable/ic_menu_search"/>
 
         <ListView
@@ -64,7 +64,7 @@
             android:id="@+id/et_raison_utilisateur"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Autre raison (optionnel)"
+            android:hint="@string/hint_autre_raison"
             android:layout_marginTop="8dp"
             android:minLines="3"
             android:gravity="top"
@@ -73,7 +73,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Niveau de gravité"
+            android:text="@string/label_gravite"
             android:textStyle="bold"
             android:layout_marginTop="16dp"/>
 
@@ -82,7 +82,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
-        <!-- Bouton valider -->
         <Button
             android:id="@+id/btn_valider_report"
             android:layout_width="match_parent"
@@ -91,7 +90,7 @@
             android:layout_marginBottom="16dp"
             android:backgroundTint="@color/couleur_projet"
             android:padding="12dp"
-            android:text="Valider le signalement"
+            android:text="@string/btn_valider_signalement"
             android:textColor="#FFFFFF"/>
 
     </LinearLayout>

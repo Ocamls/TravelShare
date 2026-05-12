@@ -16,33 +16,29 @@ public class LikeStorage {
         this.utilisateurStorage = new UtilisateurStorage(context);
     }
 
-    // Clé unique par post + utilisateur (ou anonyme)
     private String cle(String postId) {
         String user = utilisateurStorage.getUtilisateurCourant();
         return "like_" + (user != null ? user : ANON) + "_" + postId;
     }
 
-    // A-t-il déjà liké ce post ?
     public boolean aLike(String postId) {
         return prefs.getBoolean(cle(postId), false);
     }
 
-    // Toggle like — retourne true si liké, false si unliké
     public boolean toggleLike(String postId) {
         boolean etat = !aLike(postId);
         prefs.edit().putBoolean(cle(postId), etat).apply();
         return etat;
     }
 
-    // Transfert des likes anonymes vers le compte qui vient de se connecter
     public void transfererLikesAnonymes(String nomUtilisateur, List<String> tousPostIds) {
         SharedPreferences.Editor editor = prefs.edit();
         for (String postId : tousPostIds) {
             String cleAnon  = "like_" + ANON + "_" + postId;
             String cleUser  = "like_" + nomUtilisateur + "_" + postId;
             if (prefs.getBoolean(cleAnon, false)) {
-                editor.putBoolean(cleUser, true);  // transfert
-                editor.remove(cleAnon);             // supprime l'anonyme
+                editor.putBoolean(cleUser, true);
+                editor.remove(cleAnon);
             }
         }
         editor.apply();

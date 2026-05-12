@@ -10,6 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:contentDescription="Photo du post"/>
+        android:contentDescription="@string/cd_photo_post"/>
 
 </FrameLayout>
