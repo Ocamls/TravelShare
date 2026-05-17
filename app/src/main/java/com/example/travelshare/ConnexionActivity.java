@@ -22,6 +22,7 @@ public class ConnexionActivity extends AppCompatActivity {
     private TextView createAccountBtn;
     private TextView boutonAnonyme;
 
+    private Button btnTravel;
     private UtilisateurStorage utilisateurStorage;
 
     @Override
@@ -35,6 +36,7 @@ public class ConnexionActivity extends AppCompatActivity {
         btnConnexion = findViewById(R.id.btnConnexion);
         createAccountBtn = findViewById(R.id.btnPasDeCompte);
         boutonAnonyme = findViewById(R.id.btnContinuerAnonyme);
+        btnTravel = findViewById(R.id.btnTravel);
 
         utilisateurStorage = new UtilisateurStorage(this);
 
@@ -87,5 +89,11 @@ public class ConnexionActivity extends AppCompatActivity {
             intent.putExtra("isConnected", false);
             startActivity(intent);
         });
+
+        btnTravel.setOnClickListener(v -> { // TODO faire le lien avec TravelPath de Léa
+            Intent intent = new Intent(this, ConnexionActivity.class);
+            startActivity(intent);
+        });
+
     }
 }

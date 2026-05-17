@@ -22,7 +22,7 @@ public class ParametresAnonymeActivity extends AppCompatActivity {
 
         btnConvertir.setOnClickListener(v -> {
             Intent intent = new Intent(this, CreationCompteActivity.class);
-            startActivity(intent);
+            startActivity(intent); // TODO : Faire en sorte de passer les likes de l'utilisateur anonyme vers l'utilisateur connecté.
         });
 
         btnCreerCompte.setOnClickListener(v -> {

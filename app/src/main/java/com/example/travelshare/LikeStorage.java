@@ -11,6 +11,10 @@ public class LikeStorage {
     private final SharedPreferences prefs;
     private final UtilisateurStorage utilisateurStorage;
 
+    //TODO : ajouter un fonction qui calcul les likes d'un post en fonction des likes des utilisateurs anonymes.
+    // Si un utilisateur est anonyme et qu'il like un post, lors de la convertion du compte,
+    // il doit pouvoir revoir tous ses likes anonyme mais sur son compte connecté.
+    // POUR LE MOMENT NE PAS PRENDRE EN COMPTE LES ANONYMES
     public LikeStorage(Context context) {
         this.prefs              = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         this.utilisateurStorage = new UtilisateurStorage(context);

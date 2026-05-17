@@ -82,4 +82,7 @@
 
     <string name="auteur">auteur</string>
     <string name="post_a_supprimer">-</string>
+
+    <string name="TravelPath">TravelPath</string>
+
 </resources>
