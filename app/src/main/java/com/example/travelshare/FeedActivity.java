@@ -55,10 +55,13 @@ public class FeedActivity extends AppCompatActivity {
 
         PostStorage storage = new PostStorage(this);
         SharedPreferences prefs = getSharedPreferences("travelshare_prefs", Context.MODE_PRIVATE);
+//        prefs.edit().putBoolean("init_done", false).apply(); // permet en cas de changement des données de base de les mettre à jour sur l'application.
+//        prefs.edit().clear().apply(); // à utiliser qu'en cas de problème.
+//        storage.effacerTout(); // a utiliser qu'en cas de problème.
         if (!prefs.getBoolean("init_done", false)) {
             storage.ajouterPost(new Post("big_travel", "24/03/2026 à 17h42", "Vue d'une ville de nuit", "#Nuit #Ville", R.drawable.ville2));
-            storage.ajouterPost(new Post("big_travel", "22/03/2026 à 09h55", "Coucher de soleil à Lisbonne.", "#Ville #Nuage", R.drawable.paysage1));
-            storage.ajouterPost(new Post("big_travel", "20/03/2026 à 14h10", "Vue incroyable sur les Alpes !", "#Nuit #Ville", R.drawable.ville1));
+            storage.ajouterPost(new Post("big_travel", "22/03/2026 à 09h55", "Vile sous les nuages.", "#Ville #Nuage", R.drawable.paysage1));
+            storage.ajouterPost(new Post("big_travel", "20/03/2026 à 14h10", "Une ville pleine de lumière la nuit.", "#Nuit #Ville", R.drawable.ville1));
             storage.ajouterPost(new Post("big_travel", "18/03/2026 à 23h37", "Photo de la tour Eiffel...", "#PARIS #Tour Eiffel #France #Nuit", R.drawable.image_tour));
             prefs.edit().putBoolean("init_done", true).apply();
         }
